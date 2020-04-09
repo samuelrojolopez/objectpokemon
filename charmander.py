@@ -8,7 +8,6 @@ class Pokemon(BasePokemon):
         self.spend_attack(25)
         self.spend_defence(25)
         self.add_move(Burn())
-
         self.set_type(Type.FIRE)
 
     def get_name(self):
