@@ -144,3 +144,60 @@ multiplier_table = {
                     Type.NORMAL: 1
                 },
         }
+
+from basepokemon import BasePokemon, BaseMove
+
+class Pokemon(BasePokemon):
+    def __init__(self):
+        BasePokemon.__init__(self)
+        # Has to sum to 100
+        self.spend_hp(1)
+        self.spend_attack(99)
+        self.spend_defence(0)
+        self.add_move(EternalFlame())
+        self.add_move(TakeAShower())
+        self.add_move(IWillRockYou())
+        self.move = 0
+        self.moves = ['High class Steak, just the way I like it!', "Looking better now", "Are you stoned??"]
+        #self.type = Type.NORMAL
+
+
+    def get_name(self):
+        return "MapachuronZuricato!"
+
+    def choose_move(self, enemy):
+        mov = self.moves[self.move]
+        self.move = self.move + 1 if self.move < len(self.moves) - 1 else 0
+        return self.get_move_by_name(mov)
+
+class EternalFlame(BaseMove):
+    def __init__(self):
+        BaseMove.__init__(self)
+        self.choose_uses(3)
+        self.set_type(Type.FIRE)
+
+    def get_name(self):
+        return "High class Steak, just the way I like it!"
+
+class TakeAShower(BaseMove):
+    def __init__(self):
+        BaseMove.__init__(self)
+        self.choose_uses(3)
+        self.set_type(Type.WATER)
+
+    def get_name(self):
+        return "Looking better now"
+
+
+class IWillRockYou(BaseMove):
+    def __init__(self):
+        BaseMove.__init__(self)
+        self.choose_uses(3)
+        self.set_type(Type.EARTH)
+
+    def get_name(self):
+        return "Are you stoned??"
+
+
+
+
