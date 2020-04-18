@@ -12,7 +12,7 @@ class Pokemon(BasePokemon):
         self.add_move(Hypnotize())
         self.add_move(invisible())
         self.move = 0
-        self.moves = ['Lalala', "Punch ****", "Hypnotizeee @u@", " //invisible//"]
+        self.moves = ['Lalala', "Punch ****", "Hypnotizeee @u@", "//invisible//"]
 
 
     def get_name(self):
